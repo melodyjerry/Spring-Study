@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用Spring来创建对象，在Spring中这些都成为bean
+    类型 变量名 = new 类型();
+    Hello hello = new Hello();
+
+    id = 变量名
+    class = new 的对象
+    property 相当于给对象中的属性赋值
+
+     注意: 这里的name并不是属性 , 而是set方法后面的那部分 , 首字母小写。
+     引用另外一个bean , 不是用value, 而是用ref。
+
+    <bean id="..." class="...">
+        &lt;!&ndash; collaborators and configuration for this bean go here &ndash;&gt;
+    </bean>-->
+
+    <!--bean就是java对象, 在Spring中都成为Bean，由Spring创建和管理-->
+    <bean id="mysqlImpl" class="com.melodyhub.dao.UserDaoMysqlImpl"></bean>
+    <bean id="oracleImpl" class="com.melodyhub.dao.UserDaoOracleImpl"></bean>
+    <bean id="sqlServerImpl" class="com.melodyhub.dao.UserDaoSqlServerImpl"></bean>
+
+    <bean id="userServiceImpl" class="com.melodyhub.service.UserServiceImpl">
+        <property name="userDao" ref="sqlServerImpl"/>
+    </bean>
+    <!--
+    注意: 这里的name并不是属性 , 而是set方法后面的那部分 , 首字母小写。
+      ref:引用Spring容器中创建好的对象。引用另外一个bean , 不是用value, 而是用ref。
+      value：具体的值，基本数据类型！
+     -->
+
+</beans>
