@@ -6,7 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MyTest {
     @Test
     public void test(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         People people = context.getBean("people", People.class);
         people.getDog().shout();
         people.getCat().shout();

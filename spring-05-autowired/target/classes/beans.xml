@@ -10,7 +10,7 @@
     <!--<bean id="people" class="com.melodyhub.pojo.People" p:name="MelodyHub" p:dog-ref="dog" p:cat-ref="cat"/>-->
     <!--
         byName: 会自动在容器上下文中查找，和自己对象 set方法后面值(setDog) 对应的 bean id ！
-        byType: 会自动在容器上下文中查找，和自己对象 属性类型 相同的 bean ！
+        byType: 会自动在容器上下文中查找，和自己对象 属性类型 相同的 bean ！【bean必须是全局唯一！！！】
     -->
     <bean id="people" class="com.melodyhub.pojo.People" p:name="MelodyHub" autowire="byType"/>
 
