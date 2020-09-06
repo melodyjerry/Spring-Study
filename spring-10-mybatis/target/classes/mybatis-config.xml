@@ -7,9 +7,9 @@
 <configuration>
 
     <!--开启日志-->
-    <settings>
+    <!--<settings>
         <setting name="logImpl" value="STDOUT_LOGGING" />
-    </settings>
+    </settings>-->
 
     <!--可以给实体类起别名 -->
     <typeAliases>
@@ -17,25 +17,27 @@
     </typeAliases>
     
     <!--environments 可配置多个环境-->
+    <!--配置了Spring-Dao.xml后，这块可以直接注释掉了：dataSource
     <environments default="development">
-        <!--多个环境，不同id-->
+        &lt;!&ndash;多个环境，不同id&ndash;&gt;
         <environment id="development">
-            <!--事务管理-->
+            &lt;!&ndash;事务管理&ndash;&gt;
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <!--<property name="driver" value="com.mysql.jdbc.Driver"/>-->
+                &lt;!&ndash;<property name="driver" value="com.mysql.jdbc.Driver"/>&ndash;&gt;
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;autoReconnect=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
         </environment>
-    </environments>
+    </environments>-->
 
     <!--每一个Mapper.xml都需要在MyBatis核心配置文件中注册！！！-->
+    <!-- 配置了Spring-Dao.xml后，这块可以直接注释掉了：绑定Mybatis配置文件
     <mappers>
         <mapper class="com.melodyhub.mapper.UserMapper"/>
-        <!--<mapper resource="com/melodyhub/mapper/UserMapper.xml"/>-->
-    </mappers>
+        &lt;!&ndash;<mapper resource="com/melodyhub/mapper/UserMapper.xml"/>&ndash;&gt;
+    </mappers>-->
 
 </configuration>

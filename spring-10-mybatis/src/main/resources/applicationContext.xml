@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop
+		https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--导入其他配置文件-->
+    <import resource="spring-dao.xml"/>
+    <!--<import resource="spring-mvc.xml"/>-->
+
+    <!--mybatis-spring 方式1-->
+    <!--<bean id="userMapper" class="com.melodyhub.mapper.UserMapperImpl">
+        <property name="sqlSession" ref="sqlSession"/>
+    </bean>-->
+
+    <!--mybatis-spring 方式-2-->
+    <bean id="userMapper2" class="com.melodyhub.mapper.UserMapperImpl2">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+</beans>

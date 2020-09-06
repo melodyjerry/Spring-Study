@@ -35,6 +35,7 @@
             <artifactId>spring-webmvc</artifactId>
             <version>5.2.0.RELEASE</version>
         </dependency>
+        <!--Spring操作数据库的话，需要一个spring-jdbc-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
         <dependency>
             <groupId>org.springframework</groupId>
